@@ -19,7 +19,7 @@ const getRandomWord = () => {
     wordDisplay.innerHTML = word.split("").map(() => `<li class="letter"></li>`).join("");
 
 }
-
+// functionality
 const gameOver = (isVictory) => {
     setTimeout(() => {
         const modalText = isVictory ? `Você encontrou a palavra` : `A palavra correta é`;
