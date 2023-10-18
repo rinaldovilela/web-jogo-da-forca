@@ -36,7 +36,7 @@ const gameOver = (isVictory) => {
     setTimeout(() => {
         const modalText = isVictory ? `Você encontrou a palavra` : `A palavra correta é`;
         gameModal.querySelector("img").src = `images/${isVictory ? 'victory' : 'lost'}.gif`;
-        gameModal.querySelector("h4").src = `${isVictory ? 'Você Ganhou' : 'Game Over!'}.gif`;
+        gameModal.querySelector("h4").innerText = `${isVictory ? 'Você Ganhou!' : 'Você Perdeu!'}`;
         gameModal.querySelector("p").innerHTML = `${modalText} <b>${currentWord}</b>`;
         gameModal.classList.add("show");
     }, 300);

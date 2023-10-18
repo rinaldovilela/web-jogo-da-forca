@@ -150,6 +150,7 @@ body{
 .game-modal p b {
     color:#5e63ba ;
     font-weight: 600;
+    text-transform: uppercase;
 }
 
 .game-modal button{
