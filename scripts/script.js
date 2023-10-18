@@ -1,8 +1,12 @@
 
+const hangmanImage = document.querySelector(".hangman-box img");
+
 const wordDisplay = document.querySelector(".word-display");
+const guessesText = document.querySelector(".guesses-text b");
 const keyboardDiv = document.querySelector(".keyboard");
 
-let currentWord;
+let currentWord, wrongGuessCount = 0;
+const maxGuesses = 6; 
 
 const getRandomWord = () => {
 
@@ -26,8 +30,11 @@ const initGame = (button, clickedLetter) => {
         }
     })
     } else {
-        
+        wrongGuessCount++
+        hangmanImage.src = `images/hangman-${wrongGuessCount}.svg`;
     }
+    button.disabled = true
+    guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
 }
 
 // criando botões do teclado event listeners 
